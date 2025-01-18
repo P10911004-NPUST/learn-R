@@ -1,6 +1,6 @@
 # learn-R
 
-3. Download the R source
+## Download the R source
 ```bash
 export R_VERSION=4.4.2
 export INSTALL_PATH='/home/ubuntu/software/R/R-${R_VERSION}'
@@ -11,11 +11,6 @@ cd ${dirname INSTALL_PATH}
 wget https://cran.r-project.org/src/base/R-4/R-${R_VERSION}.tar.gz
 tar -xzvf R-${R_VERSION}.tar.gz
 cd R-${R_VERSION}
-```
-
-```bash
-
-cd ${INSTALL_PATH}
 ```
 
 ## Install R from source
@@ -41,7 +36,7 @@ sudo apt-get install -y default-jdk
 sudo apt-get install -y texinfo texlive texlive-fonts-extra
 ```
 
-4. Configuration
+2. Configuration and make
 ```bash
 ./configure \
   --prefix=${INSTALL_PATH} \
@@ -53,7 +48,8 @@ sudo apt-get install -y texinfo texlive texlive-fonts-extra
 make
 ```
 
-5. Add system path
+## Add system path
+1. Create a `~/bin` directory and make symlinks within it
 ```bash
 mkdir ~/bin
 cd ~/bin
@@ -62,12 +58,12 @@ ln -s ${INSTALL_PATH}/bin/Rscript ./Rscript
 ln -s ${INSTALL_PATH}/bin/Rcmd ./Rcmd
 ```
 
-6. Export PATH in .bashrc file, insert the command at the end of the file
+2. Export PATH in .bashrc file, insert the command at the end of the file
 ```bash
 export PATH='${PATH}:~/bin'
 ```
 
-7. Source the .bashrc
+3. Source the .bashrc
 ```bash
 source ~/.bashrc
 ```
